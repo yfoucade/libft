@@ -6,7 +6,7 @@
 #    By: yfoucade <yfoucade@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/17 16:26:10 by yfoucade          #+#    #+#              #
-#    Updated: 2021/12/18 10:21:28 by yfoucade         ###   ########.fr        #
+#    Updated: 2021/12/18 12:52:01 by yfoucade         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,8 @@ SRC = ft_isalpha.c \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-	ft_lstmap.c
+	ft_lstmap.c \
+	ft_strcat_free.c \
 
 OBJ = $(SRC:.c=.o)
 

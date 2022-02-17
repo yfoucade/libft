@@ -6,7 +6,7 @@
 /*   By: yfoucade <yfoucade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:44:08 by yfoucade          #+#    #+#             */
-/*   Updated: 2022/02/17 19:09:44 by yfoucade         ###   ########.fr       */
+/*   Updated: 2022/02/17 20:07:30 by yfoucade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,33 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+# ifndef MAX_FILES
+#  define MAX_FILES 1024
+# endif
+
+# ifndef EOL
+#  define EOL -2
+# endif
+
+# ifndef ERROR
+#  define ERROR -1
+# endif
+
+# ifndef READING
+#  define READING 1
+# endif
+
+typedef struct s_file_buffer
+{
+	char	buf[BUFFER_SIZE + 1];
+	int		curr_index;
+}	t_file_buffer;
 
 typedef struct s_list
 {
@@ -74,6 +101,20 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-// Custom
+// get_next_line
+
+char	*get_next_line(int fd);
+int		get_chunk(int fd, char *chunk_buf);
+int		fill_chunk(int fd, char *chunk_buf, t_file_buffer *file);
+char	*ft_strcat(char *s1, char *s2);
+
+// ft_printf
+int		ft_printf(const char *format, ...);
+size_t	ft_putnbrbase(unsigned long long nbr, char base, char lower);
+size_t	ft_putdec(long long nbr);
+size_t	ft_puthex(unsigned long nbr);
+size_t	ft_putcsp(char converter, va_list ap);
+size_t	printf_ft_putchar(char c);
+size_t	printf_ft_putstr(char *s);
 
 #endif

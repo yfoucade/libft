@@ -6,7 +6,7 @@
 /*   By: yfoucade <yfoucade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:44:08 by yfoucade          #+#    #+#             */
-/*   Updated: 2021/12/18 12:51:33 by yfoucade         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:09:44 by yfoucade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // Custom
-
-char	*ft_strcat_free(char *s1, char *s2, char free_s1, char free_s2);
 
 #endif
